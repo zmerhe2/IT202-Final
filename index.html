@@ -85,7 +85,7 @@
               <p class="card-byline">Byline</p>
               <p class="card-publication">Publication Date</p>
               <p class="card-text">Short Summary</p>
-              <a href="#" class="btn btn-primary">link</a>
+              <!--<a href="#" class="btn btn-primary">link</a>-->
             </div>
           </div>
         </div>
@@ -168,8 +168,8 @@
           //title
           url += '?' + $.param({
             'api-key': "e339a5be768f459aaa4e301da53d2281",
-            'query': "searching",
-            'display_title': ($("#results").val())
+            'query': ($("#results").val())
+            //'display_title': ($("#results").val())
           });
           console.log(url);
           $.ajax({
@@ -191,7 +191,7 @@
                 clone.find(".card-publication").text(v.publication_date);
                 clone.find(".card-text").text(v.summary_short);
                 clone.find(".card-img-top").text(v.multimedia);
-                clone.find(".btn-primary").text(v.url);
+                //clone.find(".btn-primary").text(v.url);
                 clone.attr("id",v.display_title)
       
                 $("#reviews").append(clone);
