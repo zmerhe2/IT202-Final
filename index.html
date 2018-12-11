@@ -71,9 +71,12 @@
           <div id="template" class="card" style="width: 18rem;">
             <img class="card-img-top" src=".../100px180/" alt="Card image cap">
             <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <a href="#" class="btn btn-primary">Go somewhere</a>
+              <h5 class="card-title">Headline</h5>
+              <p class="card-rating">Rating</p>
+              <p class="card-byline">Byline</p>
+              <p class="card-publication">Publication Date</p>
+              <p class="card-text">Short Summary</p>
+              <a href="#" class="btn btn-primary">link</a>
             </div>
           </div>
         </div>
@@ -382,10 +385,13 @@
             // clone the template
             var clone = $("#template").clone();
             clone.find(".card-title").text(v.display_title);
-            clone.find(".card-text").text(v.headline);
+            clone.find(".card-rating").text(v.mpaa_rating);
+            clone.find(".card-byline").text(v.byline);
+            clone.find(".card-publication").text(v.publication_date);
+            clone.find(".card-text").text(v.summary_short);
             clone.attr("id",v.display_title)
   
-            $("body").append(clone);
+            $(".row").append(clone);
   
   
             //$("body").append(v.display_title + "<br>")
